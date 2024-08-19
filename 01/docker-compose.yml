@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  app:
+    image: node:6.9.1
+    container_name: exercise_01
+    working_dir: /work
+    volumes:
+      - .:/work
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_IP=db
+    command: node /work/server.js
+    depends_on:
+      - db
+
+  db:
+    image: mongo:3.2
+    container_name: exercise_01_db
+
+  test:
+    image: node:6.9.1
+    container_name: exercise_01_test
+    working_dir: /work
+    volumes:
+      - .:/work
+    command: curl -s http://app:3000
+    depends_on:
+      - app
+      - db
+  

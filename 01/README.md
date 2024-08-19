@@ -29,3 +29,13 @@ The rest is up to you.
 Install the necessary node modules like this
 
     docker run -it --rm -w /work -v $(pwd):/work node:6.9.1 npm install
+
+## My Expierence
+
+Each service name acts as a hostname and can be used as a URL address by other services within the same Docker network.
+
+eg1: ```test``` can access ```app``` using ```http://app:3000```.
+
+eg2: ```app``` can access ```db``` using ```mongodb://db:27017```, and hence ```app```'s ```environment``` specifies that ```MONGE_IP=db```
+
+```depends_on``` is used to specify the order of service startup. It does not wait for the service to be ready before starting the dependent service.
