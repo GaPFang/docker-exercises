@@ -24,4 +24,13 @@ Run it without setting the env variable and you should get this as output
 
     testhost
 
+## My Expierence
+
+environment can be set: 
+
+(1) specified in the Dockerfile
+
+(2) specified in the docker-compose.yml file (service's environment section)
+
+(3) passed in at runtime
 
