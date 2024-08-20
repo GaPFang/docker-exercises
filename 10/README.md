@@ -17,3 +17,11 @@ Things to consider:
     ecs-cli license
     ecs-cli configure --cluster ecs-cli-demo
 
+## My Expirence
+
+Good practice!
+
+* RUN is a build-time command, each RUN creates a new layer in the Docker image.
+* CMD is a run-time command, it is the command that is run when the container starts in default.
+* ENTRYPOINT is similar to CMD, but it is not overridden when a command is passed at runtime.
+
